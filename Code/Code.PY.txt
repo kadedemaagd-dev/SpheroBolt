@@ -3,9 +3,22 @@
 # Date: 5.4.2026
 # Program: Sandbox Training
 
+"""
 async def startProgram():
     await speak("Hello Smelly", True)
     set_main_led({'r': 255, 'g': 0, 'b': 0})
     set_speed(70)
     await delay(3)
     set_speed(0)
+
+"""
+
+async def startProgram():
+    set_main_led({'r': 0, 'g': 0, 'b': 255})
+    await speak("Hello Square", True)
+    await delay(1)
+    for _i1 in range(4):
+        set_main_led(get_random_color())
+        await Sound.Game.Coin.play(True)
+        await roll((get_heading() + 90), 60, 1)
+        await delay(1)
