@@ -39,3 +39,17 @@ async def start_program():
     await delay(0.5)
     set_speed(0)
     await speak("sounds", True)
+    
+    #Emoji c-4
+
+    await delay(2)
+    await roll((get_heading() - 90), 60, 1)
+    set_speed(2)
+    await delay(0.3)
+    set_speed(0)
+
+    await delay(1)
+    await roll((get_heading() - 90), 60, 1)
+    set_speed(2)
+    await delay(0.3)
+    set_speed(0)
