@@ -1,1 +1,5 @@
 Put code here
+# Programmers: Kade Demaagd & Cohen Smith
+# Sphero Bolt ID: F28b
+# Date: 5.15.2026
+# Program: Maze Challenge
