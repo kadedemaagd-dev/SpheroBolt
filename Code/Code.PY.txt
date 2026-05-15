@@ -23,3 +23,19 @@ async def start_program():
     await delay(1.1)
     set_speed(0)
     set_main_led({'r': 0, 'g': 255, 'b': 0})
+    
+#Noise C-3
+
+    await delay(2)
+    set_main_led({'r': 0, 'g': 0, 'b': 0})
+    await roll((get_heading() + 90), 60, 1)
+    set_speed(0.2)
+    await delay(0.1)
+    set_speed(0)
+
+    await delay(1)
+    await roll((get_heading() + 45), 60, 1)
+    set_speed(2)
+    await delay(0.5)
+    set_speed(0)
+    await speak("sounds", True)
