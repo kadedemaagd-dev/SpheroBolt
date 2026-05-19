@@ -1,1 +1,11 @@
-Put code here
+async def start_program():
+
+
+
+#Purple C-1
+    
+    set_main_led({'r': 0, 'g': 0, 'b': 0})
+    set_speed(60)
+    await delay(2.3)
+    set_speed(0)
+    set_main_led({'r': 255, 'g': 0, 'b': 255})
