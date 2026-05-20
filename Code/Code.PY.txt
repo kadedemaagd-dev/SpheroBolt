@@ -76,3 +76,37 @@ async def start_program():
     play_matrix_animation(0, True)
     await delay(2)
     clear_matrix()
+
+    #Blue C-5
+    await delay(1)
+    await roll((get_heading() + 90), 60, 1)
+    set_main_led({'r': 0, 'g': 200, 'b': 0})
+
+    #Orange C-6
+    await delay(1)
+    await roll((get_heading() - 105), 60, 1)
+    set_main_led({'r': 255, 'g': 166, 'b': 0})
+    await delay(1)
+    set_main_led({'r': 0, 'g': 0, 'b': 0})
+    
+    #Rotate CW C-7
+    await roll((get_heading() - 90), 60, 1)
+    await delay(1)
+    await spin(360, 4)
+
+    #Sound 2 C-8
+    await delay(1)
+    await roll((get_heading() - 90), 60, 1)
+    await speak("sounds", True)
+
+    #Rotate CCW C-9
+    await delay(1)
+    await roll((get_heading() + 45), 60, 1)
+    await spin(-360, 4)
+
+    #BONUS - VICTORY C-10
+    await delay(1)
+    await set_speed(20)
+    await delay(1)
+    await set_speed(0)
+    set_main_led({'r': 0, 'g': 255, 'b': 0})
