@@ -1,28 +1,78 @@
+register_matrix_animation({
+    'frames': [
+        [
+            [1, 1, 6, 6, 6, 6, 1, 1],
+            [1, 6, 6, 6, 6, 1, 1, 1],
+            [6, 6, 6, 6, 1, 1, 1, 1],
+            [6, 6, 6, 1, 1, 1, 1, 1],
+            [6, 6, 6, 6, 1, 1, 1, 1],
+            [6, 6, 6, 6, 6, 1, 1, 1],
+            [1, 6, 6, 6, 6, 6, 1, 1],
+            [1, 1, 6, 6, 6, 6, 6, 1]
+        ],
+        [
+            [1, 6, 6, 6, 6, 6, 6, 1],
+            [6, 6, 6, 6, 6, 6, 6, 6],
+            [6, 6, 6, 6, 6, 6, 6, 6],
+            [6, 6, 6, 6, 6, 6, 6, 6],
+            [6, 6, 6, 6, 6, 6, 6, 6],
+            [6, 6, 6, 6, 6, 6, 6, 6],
+            [6, 6, 6, 6, 6, 6, 6, 6],
+            [1, 6, 6, 6, 6, 6, 6, 1]
+        ]
+    ],
+    'palette': [
+        {'r': 255, 'g': 255, 'b': 255},
+        {'r': 0,   'g': 0,   'b': 0  },
+        {'r': 255, 'g': 0,   'b': 0  },
+        {'r': 255, 'g': 16,  'b': 0  },
+        {'r': 255, 'g': 128, 'b': 0  },
+        {'r': 255, 'g': 191, 'b': 0  },
+        {'r': 255, 'g': 255, 'b': 0  },
+        {'r': 185, 'g': 246, 'b': 30 },
+        {'r': 0,   'g': 255, 'b': 0  },
+        {'r': 185, 'g': 255, 'b': 255},
+        {'r': 0,   'g': 255, 'b': 255},
+        {'r': 0,   'g': 0,   'b': 255},
+        {'r': 145, 'g': 0,   'b': 211},
+        {'r': 157, 'g': 48,  'b': 118},
+        {'r': 255, 'g': 0,   'b': 255},
+        {'r': 204, 'g': 27,  'b': 126}
+    ],
+    'fps': 6,
+    'transition': MatrixAnimationTransition.NONE
+})
+
 async def start_program():
 
-
-
-#Purple C-1
-    
+    #Purple C-1
     set_main_led({'r': 0, 'g': 0, 'b': 0})
     set_speed(60)
     await delay(2.3)
     set_speed(0)
     set_main_led({'r': 255, 'g': 0, 'b': 255})
 
-#Green C-2
-
+    #Green C-2
     await delay(2)
     set_main_led({'r': 0, 'g': 0, 'b': 0})
-    await roll((get_heading() + 90), 90, 1)
+    await roll((get_heading() + 90), 60, 1.5)
     set_main_led({'r': 0, 'g': 255, 'b': 0})
 
-#Noise C-3
-
+    #Noise C-3
     await delay(2)
     set_main_led({'r': 0, 'g': 0, 'b': 0})
-    await roll((get_heading() + 90), 60, 1)
-
+    await roll((get_heading() + 90), 50, 1)
     await delay(1)
     await roll((get_heading() + 45), 65, 1)
     await speak("sounds", True)
+
+    #Emoji C-4
+    await delay(2)
+    await roll((get_heading() - 90), 60, 1)
+    await delay(1)
+    await roll((get_heading() - 90), 65, 1)
+    await delay(1)
+    await roll((get_heading() + 90), 65, 1)
+    play_matrix_animation(0, True)
+    await delay(2)
+    clear_matrix()
