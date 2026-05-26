@@ -102,3 +102,8 @@ async def start_program():
     await delay(1)
     await roll((get_heading() - 90), 65, 1)
     await speak("sounds part 2", True)
+
+    #Rotate CCW C-9
+    await delay(2)
+    await roll((get_heading() + 45), 60, 1)
+    await spin(-360, 4)
