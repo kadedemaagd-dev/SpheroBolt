@@ -107,3 +107,10 @@ async def start_program():
     await delay(2)
     await roll((get_heading() + 45), 60, 1)
     await spin(-360, 4)
+
+    #BONUS - VICTORY C-10
+    await delay(1)
+    await set_speed(20)
+    await delay(1)
+    await set_speed(0)
+    set_main_led({'r': 0, 'g': 255, 'b': 0})
