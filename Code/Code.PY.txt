@@ -92,3 +92,8 @@ async def start_program():
     set_main_led({'r': 255, 'g': 166, 'b': 0})
     await delay(1)
     set_main_led({'r': 0, 'g': 0, 'b': 0})
+
+    #Rotate CW C-7
+    await roll((get_heading() - 45), 40, 1)
+    await delay(1)
+    await spin(360, 4)
