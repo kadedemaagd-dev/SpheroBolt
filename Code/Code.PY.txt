@@ -97,3 +97,8 @@ async def start_program():
     await roll((get_heading() - 45), 40, 1)
     await delay(1)
     await spin(360, 4)
+
+    #Sound 2 C-8
+    await delay(1)
+    await roll((get_heading() - 90), 65, 1)
+    await speak("sounds part 2", True)
